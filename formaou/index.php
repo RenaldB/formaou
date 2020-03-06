@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        echo "coucou, formaou";
-        ?>
-    </body>
-</html>
+<?php
+session_start();
+    require('views/Layout/header.php');
+
+
+switch ($_SERVER['REQUEST_URI']) {
+    case "/": $page = "accueil";           
+        
+        break;
+    case '/accueil': $page = "accueil"; break;
+    case '/connexion':
+        $page = "Utilisateur/login";
+        break;
+    case '/inscription':
+        $page = "Utilisateur/inscription";
+        break;
+    case '/compte':
+        $page = "Utilisateur/compte";
+}
+
+if (isset($page)) {
+    require('views/' . $page . '.php');
+}
+
+require('views/Layout/footer.php');

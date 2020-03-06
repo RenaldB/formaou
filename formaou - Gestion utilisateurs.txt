@@ -1,0 +1,10 @@
+Table utilisateur :
+
+Nom varchar(50),
+Prenom varchar(50),
+Age int,
+telephone varchar(12),
+statut int,
+
+Table Statut :
+libelle varchar(50) {Stagiaire, Propiétaire, Stagiaire}
